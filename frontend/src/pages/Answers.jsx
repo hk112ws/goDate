@@ -27,7 +27,7 @@ const Answers = () => {
 
     async function fetchData() {
       try {
-        const result = await axios.get(`http://localhost:3001/get-answers/${userId}/${partnerId}`);
+        const result = await axios.get(`https://go-date-api.vercel.app/get-answers/${userId}/${partnerId}`);
         if (result.data) {
           setAnswers(result.data.answers);
         }
