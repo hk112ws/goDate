@@ -175,7 +175,7 @@ function Questionnaire({ name: initialName = "User", sender: initialSender = "Se
   useEffect(() => {
     async function fetchData() {
       try {
-        const result = await axios.post("http://localhost:3001/getUserSender", values);
+        const result = await axios.post("https://go-date-api.vercel.app/getUserSender", values);
         if (result.data) {
           setName(result.data.user);
           setSender(result.data.sender);
@@ -216,7 +216,7 @@ function Questionnaire({ name: initialName = "User", sender: initialSender = "Se
       setCurrentSetIndex(branchIndex - 1);
     } else if (action === "end") {
       try {
-        const result = await axios.post("http://localhost:3001/saveresponses", {
+        const result = await axios.post("https://go-date-api.vercel.app/saveresponses", {
             nameID,
             senderID,
             responses,
