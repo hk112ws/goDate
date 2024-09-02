@@ -7,14 +7,9 @@ const bcrypt= require("bcrypt");
 
 const app=express();
 app.use(express.json());
-app.use(cors(
-	{
-		
-  origin: ["https://go-date-app-front.vercel.app"], // Replace with your actual Vercel URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-	}
-));
+app.use(cors({
+  origin: 'https://go-date-app-front.vercel.app'
+}));
 
 
 
