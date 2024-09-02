@@ -97,7 +97,7 @@ const Signup = () => {
   // Login handling
   const handleFormSubmit = async (values) => {
     try {
-      const result = await axios.post("http://localhost:3001/login", values);
+      const result = await axios.post("https://go-date-api.vercel.app/login", values);
       const myId = result.data._id;
       storeData('appId', myId);
       navigate("/Create");
@@ -109,7 +109,7 @@ const Signup = () => {
   // Registration handling
   const handleFormResSubmit = async (values) => {
     try {
-      await axios.post("http://localhost:3001/register", values);
+      await axios.post("https://go-date-api.vercel.app/register", values);
       setPageType("login");
     } catch (error) {
       console.error('Registration failed:', error);
