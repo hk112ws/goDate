@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -27,7 +28,7 @@ const retrieveData = (key) => {
       
       if (isConfirmed) {
         try {
-          const result = await axios.delete(`http://localhost:3001/api/users/${userId}/partners-delete/${partnerId}`);
+          const result = await axios.delete(`https://go-date-api.vercel.app/api/users/${userId}/partners-delete/${partnerId}`);
           if (result.data) {
             alert("Data deleted");
             window.location.reload();
@@ -44,7 +45,7 @@ const retrieveData = (key) => {
       // Conditional navigation logic
       async function fetchData() {
         try {
-          const result = await axios.get(`http://localhost:3001/get-partners/${userId}`);
+          const result = await axios.get(`https://go-date-api.vercel.app/get-partners/${userId}`);
           if (result.data) {
             setPartners(result.data)
           }
