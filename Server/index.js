@@ -21,7 +21,9 @@ app.use(cors(
 mongoose.connect("mongodb+srv://hkalita830:0JnxmCR6DRZo6A5P@cluster0.y7g6jeu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 
-
+app.get("/"(req,res)=>{
+	res.json("Hello");
+})
 
 app.post('/register',async (req,res)=>{
     try{
