@@ -10,6 +10,10 @@ app.use(express.json());
 app.use(cors(
 	{
 		
+  origin: 'https://go-date.vercel.app', // Replace with your actual Vercel URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 	}
 ));
 
