@@ -46,7 +46,7 @@ const Createrquest = () => {
     initialValues: initialValue,
     onSubmit: async (values, {resetForm} ) => {
       try {
-        await axios.post("http://localhost:3001/addPartner", {values,userId})
+        await axios.post("https://go-date-api.vercel.app/addPartner", {values,userId})
         .then((result)=>{
             setLink(`${window.location.origin}/created/${result.data.PartnerId}/get-answer/${userId}`);
         })
